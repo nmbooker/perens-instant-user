@@ -27,7 +27,6 @@ application.
 * Edit your Gemfile or gemspec to add a dependency on the perens-instant-user gem.
 * <tt>bundle update</tt>
 * <tt>rake perens_instant_user:install:migrations</tt>
-* <tt>rake db:migrate</tt>
 * Edit <tt>config/routes.rb</tt>, adding this line:
     mount Perens::InstantUser::Engine => '/'
 * Copy http://raw.github.com/plataformatec/devise/master/lib/generators/templates/devise.rb into <tt>config/initializers/devise.rb</tt> and edit it.
@@ -45,6 +44,8 @@ application.
     Generate the value by running this program once.
       require 'securerandom'
       print %Q(config.pepper = "#{SecureRandom.hex(64)}"\n)
+
+* <tt>rake db:migrate</tt>
 
 * Edit one of your environment files, like <tt>config/application.rb</tt>, to add the
   URL info to be used in email messages to users from the user management
